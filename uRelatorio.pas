@@ -1,0 +1,54 @@
+unit uRelatorio;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, uRelatorioAbast,
+  uDM;
+
+type
+  TfrmRalatorio = class(TForm)
+    Panel1: TPanel;
+    Label1: TLabel;
+    mkeDataIni: TMaskEdit;
+    mkeDataFim: TMaskEdit;
+    Label2: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button2Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmRalatorio: TfrmRalatorio;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmRalatorio.Button1Click(Sender: TObject);
+begin
+  DM.fdqQryRelAbast.Close;
+  DM.fdqQryRelAbast.Open;
+
+  frmRelatorioAbast.rlRelAbastecimento.Preview();
+end;
+
+procedure TfrmRalatorio.Button2Click(Sender: TObject);
+begin
+  close;
+end;
+
+procedure TfrmRalatorio.FormShow(Sender: TObject);
+begin
+  mkeDataIni.Text := FormatDateTime('dd/MM/yyyy', Now -1 );
+  mkeDataFim.Text := FormatDateTime('dd/MM/yyyy', Now);
+end;
+
+end.

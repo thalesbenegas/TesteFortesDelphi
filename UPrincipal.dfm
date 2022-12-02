@@ -73,6 +73,10 @@ object Form1: TForm1
     end
     object Relatrio1: TMenuItem
       Caption = 'Relat'#243'rio'
+      object Relatrio2: TMenuItem
+        Caption = 'Relat'#243'rio'
+        OnClick = Relatrio2Click
+      end
     end
   end
 end

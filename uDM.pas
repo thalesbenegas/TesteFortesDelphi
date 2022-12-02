@@ -21,6 +21,12 @@ type
     fdqQryTanqueDESCRICAO: TStringField;
     fdqQryBombaTANQUE: TStringField;
     fdqConPadrao: TFDQuery;
+    fdqQryAbast: TFDQuery;
+    fdqQryRelAbast: TFDQuery;
+    fdqQryRelAbastDATA: TDateField;
+    fdqQryRelAbastTANQUE_USADO: TStringField;
+    fdqQryRelAbastBOMBA_USADA: TStringField;
+    fdqQryRelAbastVALOR: TFMTBCDField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

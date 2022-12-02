@@ -11,7 +11,9 @@ uses
   uTanquesMnt in 'uTanquesMnt.pas' {frmTanquesMnt},
   uDM in 'uDM.pas' {DM: TDataModule},
   uAbastecimento in 'uAbastecimento.pas' {frmAbastecimento},
-  uClassAbastecimento in 'uClassAbastecimento.pas';
+  uClassAbastecimento in 'uClassAbastecimento.pas',
+  uRelatorio in 'uRelatorio.pas' {frmRalatorio},
+  uRelatorioAbast in 'uRelatorioAbast.pas' {frmRelatorioAbast};
 
 {$R *.res}
 
@@ -25,5 +27,7 @@ begin
   Application.CreateForm(TfrmTanquesMnt, frmTanquesMnt);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TfrmAbastecimento, frmAbastecimento);
+  Application.CreateForm(TfrmRalatorio, frmRalatorio);
+  Application.CreateForm(TfrmRelatorioAbast, frmRelatorioAbast);
   Application.Run;
 end.

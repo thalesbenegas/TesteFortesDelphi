@@ -1,0 +1,29 @@
+unit uRelatorioAbast;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, RLReport, Data.DB, uDM;
+
+type
+  TfrmRelatorioAbast = class(TForm)
+    rlRelAbastecimento: TRLReport;
+    dsRelAbast: TDataSource;
+    RLBand1: TRLBand;
+    RLBand2: TRLBand;
+    RLBand3: TRLBand;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmRelatorioAbast: TfrmRelatorioAbast;
+
+implementation
+
+{$R *.dfm}
+
+end.
