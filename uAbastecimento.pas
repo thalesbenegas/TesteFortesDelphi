@@ -26,15 +26,12 @@ type
     edtImposto: TEdit;
     Label7: TLabel;
     lblData: TLabel;
-    Label8: TLabel;
-    edtValorLitro: TEdit;
     procedure Button2Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
     procedure edtValorExit(Sender: TObject);
     procedure edtBombaExit(Sender: TObject);
-    procedure edtValorLitroExit(Sender: TObject);
   private
     { Private declarations }
     clAbastecimento : clsAbastecimento;
@@ -60,27 +57,6 @@ begin
     ShowMessage('Informe uma bomba!');
     Exit;
   end;
-
-  if edtLitros.Text = '' then
-  begin
-    ShowMessage('Informe a quantidade de litros!');
-    Exit;
-  end;
-
-  if edtValorLitro.Text = '' then
-  begin
-    ShowMessage('Informe o Valor!');
-    Exit;
-  end;
-
-  clAbastecimento.idBomba   := StrToInt(edtBomba.Text);
-  clAbastecimento.litros    := StrToFloat(edtLitros.Text);
-  clAbastecimento.vllitro   := StrToFloat(edtValorLitro.Text);
-  clAbastecimento.valor     := StrToFloat(edtValor.Text);
-  clAbastecimento.imposto   := StrToFloat(edtImposto.Text);
-  clAbastecimento.vlimposto := StrToFloat(edtVlImposto.Text);
-
-  clAbastecimento.Incluir(clAbastecimento);
 
   LimparCampos();
 end;
@@ -108,23 +84,8 @@ begin
   if TryStrToFloat(edtValor.Text, Valor) then
   begin
     vlImposto := Valor + ((Valor * strToint(edtImposto.Text)) /100);
-    edtVlImposto.Text := FormatFloat('#,0.00', vlImposto);
+    edtVlImposto.Text := FloatToStr(vlImposto);
   end;
-end;
-
-procedure TfrmAbastecimento.edtValorLitroExit(Sender: TObject);
-var
-  ValorLitro : double;
-  ValorTotal : double;
-begin
-  if TryStrToFloat(edtValorLitro.Text, ValorLitro) then
-  begin
-    ValorTotal := ValorLitro * StrToFloat(edtLitros.Text);
-    edtValor.Text := FormatFloat('#,0.00', ValorTotal);
-  end;
-
-  edtValorExit(self);
-
 end;
 
 procedure TfrmAbastecimento.FormShow(Sender: TObject);
@@ -145,7 +106,6 @@ begin
   end;
 
   edtLitros.Text := '0,00';
-  edtValorLitro.Text := '0,00';
   edtImposto.Text := '13';
 
 end;

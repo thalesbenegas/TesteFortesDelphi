@@ -19,7 +19,6 @@ type clsAbastecimento = class
     fvlimposto: real;
     fimposto: real;
     fdmConect: TDM;
-    fvllitro: real;
 
   public
     constructor Create;
@@ -31,13 +30,11 @@ type clsAbastecimento = class
     property valor : real read fvalor write fvalor;
     property imposto : real read fimposto write fimposto;
     property vlimposto : real read fvlimposto write fvlimposto;
-    property vllitro : real read fvllitro write fvllitro;
     property data : tdatetime read fdata write fdata;
     property OdmConect : TDM read fdmConect write fdmConect;
 
 
     function carregarbomba(cod :string): string;
-    procedure Incluir(Obj: clsAbastecimento);
 
 end;
 
@@ -73,27 +70,6 @@ end;
 destructor clsAbastecimento.Destroy;
 begin
   FreeAndNil(fdmConect);
-end;
-
-procedure clsAbastecimento.Incluir(Obj: clsAbastecimento);
-begin
-  try
-    fdmConect.fdqQryAbast.Sql.Clear;
-
-    fdmConect.fdqQryAbast.Sql.Add('Insert into abastecimento (idBomba, litros, valor, imposto, vlimposto, vllitro, dataAbastecimento) ');
-    fdmConect.fdqQryAbast.Sql.Add(' Values (:idBomba, :litros, :valor, :imposto, :vlimposto, :vllitro, :dataAbastecimento) ');
-
-    fdmConect.fdqQryAbast.ParamByName('idBomba').value := Obj.idBomba;
-    fdmConect.fdqQryAbast.ParamByName('litros').value := Obj.litros;
-    fdmConect.fdqQryAbast.ParamByName('valor').value := Obj.valor;
-    fdmConect.fdqQryAbast.ParamByName('imposto').value := Obj.imposto;
-    fdmConect.fdqQryAbast.ParamByName('vlimposto').value := Obj.vlimposto;
-    fdmConect.fdqQryAbast.ParamByName('vllitro').value := Obj.vllitro;
-    fdmConect.fdqQryAbast.ParamByName('dataAbastecimento').value := now;
-    fdmConect.fdqQryAbast.ExecSQL;
-  finally
-    fdmConect.fdqQryAbast.Close;
-  end;
 end;
 
 end.

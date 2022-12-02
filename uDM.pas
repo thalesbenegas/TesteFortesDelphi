@@ -21,7 +21,6 @@ type
     fdqQryTanqueDESCRICAO: TStringField;
     fdqQryBombaTANQUE: TStringField;
     fdqConPadrao: TFDQuery;
-    fdqQryAbast: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

@@ -59,9 +59,4 @@ object DM: TDM
     Left = 184
     Top = 208
   end
-  object fdqQryAbast: TFDQuery
-    Connection = FDCFirebird
-    Left = 288
-    Top = 128
-  end
 end
