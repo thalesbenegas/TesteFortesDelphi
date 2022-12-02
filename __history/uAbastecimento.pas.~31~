@@ -31,6 +31,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
     procedure edtValorExit(Sender: TObject);
+    procedure edtBombaExit(Sender: TObject);
   private
     { Private declarations }
     clAbastecimento : clsAbastecimento;
@@ -57,6 +58,27 @@ begin
     Exit;
   end;
 
+  if edtLitros.Text = '' then
+  begin
+    ShowMessage('Informe a quantidade de litros!');
+    Exit;
+  end;
+
+  if edtValorLitro.Text = '' then
+  begin
+    ShowMessage('Informe o Valor!');
+    Exit;
+  end;
+
+  clAbastecimento.idBomba   := StrToInt(edtBomba.Text);
+  clAbastecimento.litros    := StrToFloat(edtLitros.Text);
+  clAbastecimento.vllitro   := StrToFloat(edtValorLitro.Text);
+  clAbastecimento.valor     := StrToFloat(edtValor.Text);
+  clAbastecimento.imposto   := StrToFloat(edtImposto.Text);
+  clAbastecimento.vlimposto := StrToFloat(edtVlImposto.Text);
+
+  clAbastecimento.Incluir(clAbastecimento);
+
   LimparCampos();
 end;
 
@@ -70,6 +92,11 @@ begin
   Close;
 end;
 
+procedure TfrmAbastecimento.edtBombaExit(Sender: TObject);
+begin
+  edtDescBomba.Text := clAbastecimento.carregarbomba(edtBomba.Text);
+end;
+
 procedure TfrmAbastecimento.edtValorExit(Sender: TObject);
 var
   Valor : double;
@@ -77,9 +104,9 @@ var
 begin
   if TryStrToFloat(edtValor.Text, Valor) then
   begin
-    vlImposto := Valor + ((Valor * strToint(edtImposto.Text)) /100) ;
+    vlImposto := Valor + ((Valor * strToint(edtImposto.Text)) /100);
+    edtVlImposto.Text := FloatToStr(vlImposto);
   end;
-
 end;
 
 procedure TfrmAbastecimento.FormShow(Sender: TObject);
@@ -100,7 +127,7 @@ begin
   end;
 
   edtLitros.Text := '0,00';
-  edtVlImposto.Text := '13';
+  edtImposto.Text := '13';
 
 end;
 

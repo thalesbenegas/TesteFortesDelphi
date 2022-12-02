@@ -18,8 +18,11 @@ type clsAbastecimento = class
     fdata: tdatetime;
     fvlimposto: real;
     fimposto: real;
+    fdmConect: TDM;
 
   public
+    constructor Create;
+    destructor Destroy;
 
     property id : integer read fId write fId;
     property idBomba : integer read fidBomba write fidBomba;
@@ -28,9 +31,45 @@ type clsAbastecimento = class
     property imposto : real read fimposto write fimposto;
     property vlimposto : real read fvlimposto write fvlimposto;
     property data : tdatetime read fdata write fdata;
+    property OdmConect : TDM read fdmConect write fdmConect;
+
+
+    function carregarbomba(cod :string): string;
 
 end;
 
 implementation
+
+{ clsAbastecimento }
+
+function clsAbastecimento.carregarbomba(cod: string): string;
+begin
+  try
+    Result := '';
+    fdmConect.fdqConPadrao.Sql.Clear;
+
+    fdmConect.fdqConPadrao.Sql.Add(' select descricao from bomba ');
+    fdmConect.fdqConPadrao.Sql.Add(' where idbomba = :idbomba ');
+
+    fdmConect.fdqConPadrao.ParamByName('idbomba').Value  := cod;
+    fdmConect.fdqConPadrao.Open;
+
+    if not fdmConect.fdqConPadrao.IsEmpty then
+      Result := fdmConect.fdqConPadrao.FieldByName('descricao').AsString;
+
+  finally
+     fdmConect.fdqConPadrao.Close;
+  end;
+end;
+
+constructor clsAbastecimento.Create;
+begin
+  fdmConect := DM;
+end;
+
+destructor clsAbastecimento.Destroy;
+begin
+  FreeAndNil(fdmConect);
+end;
 
 end.

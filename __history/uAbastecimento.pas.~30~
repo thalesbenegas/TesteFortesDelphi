@@ -23,13 +23,15 @@ type
     edtVlImposto: TEdit;
     Label5: TLabel;
     Label6: TLabel;
-    Edit2: TEdit;
+    edtImposto: TEdit;
     Label7: TLabel;
     lblData: TLabel;
     procedure Button2Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
+    procedure edtValorExit(Sender: TObject);
+    procedure edtBombaExit(Sender: TObject);
   private
     { Private declarations }
     clAbastecimento : clsAbastecimento;
@@ -69,6 +71,23 @@ begin
   Close;
 end;
 
+procedure TfrmAbastecimento.edtBombaExit(Sender: TObject);
+begin
+  edtDescBomba.Text := clAbastecimento.carregarbomba(edtBomba.Text);
+end;
+
+procedure TfrmAbastecimento.edtValorExit(Sender: TObject);
+var
+  Valor : double;
+  vlImposto : double;
+begin
+  if TryStrToFloat(edtValor.Text, Valor) then
+  begin
+    vlImposto := Valor + ((Valor * strToint(edtImposto.Text)) /100);
+    edtVlImposto.Text := FloatToStr(vlImposto);
+  end;
+end;
+
 procedure TfrmAbastecimento.FormShow(Sender: TObject);
 begin
   lblData.Caption := DateTimeToStr(now);
@@ -87,7 +106,7 @@ begin
   end;
 
   edtLitros.Text := '0,00';
-  edtVlImposto.Text := '13';
+  edtImposto.Text := '13';
 
 end;
 

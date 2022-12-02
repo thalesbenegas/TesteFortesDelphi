@@ -81,7 +81,7 @@ begin
     fdmConect.fdqQryAbast.Sql.Clear;
 
     fdmConect.fdqQryAbast.Sql.Add('Insert into abastecimento (idBomba, litros, valor, imposto, vlimposto, vllitro, dataAbastecimento) ');
-    fdmConect.fdqQryAbast.Sql.Add(' Values (:idBomba, :litros, :valor, :imposto, :vlimposto, :vllitro, :dataAbastecimento) ');
+    fdmConect.fdqQryAbast.Sql.Add(' Values (:idBomba, :litros, :valor, :imposto, :vlimposto, vllitro, :dataAbastecimento) ');
 
     fdmConect.fdqQryAbast.ParamByName('idBomba').value := Obj.idBomba;
     fdmConect.fdqQryAbast.ParamByName('litros').value := Obj.litros;
