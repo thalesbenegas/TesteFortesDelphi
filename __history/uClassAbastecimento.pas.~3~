@@ -1,0 +1,52 @@
+unit uClassAbastecimento;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, uDM;
+
+type clsAbastecimento = class
+
+  private
+    fvalor: real;
+    fId: integer;
+    fidBomba: integer;
+    flitros: real;
+    fdata: tdatetime;
+    fvlimposto: real;
+    fimposto: real;
+    fdmConect: TDM;
+
+  public
+    constructor Create;
+    destructor Destroy;
+
+    property id : integer read fId write fId;
+    property idBomba : integer read fidBomba write fidBomba;
+    property litros : real read flitros write flitros;
+    property valor : real read fvalor write fvalor;
+    property imposto : real read fimposto write fimposto;
+    property vlimposto : real read fvlimposto write fvlimposto;
+    property data : tdatetime read fdata write fdata;
+    property OdmConect : TDM read fdmConect write fdmConect;
+
+end;
+
+implementation
+
+{ clsAbastecimento }
+
+constructor clsAbastecimento.Create;
+begin
+  fdmConect := DM;
+end;
+
+destructor clsAbastecimento.Destroy;
+begin
+  FreeAndNil(fdmConect);
+end;
+
+end.

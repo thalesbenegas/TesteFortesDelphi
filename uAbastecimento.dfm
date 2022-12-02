@@ -88,6 +88,13 @@ object frmAbastecimento: TfrmAbastecimento
       Font.Style = []
       ParentFont = False
     end
+    object Label8: TLabel
+      Left = 208
+      Top = 125
+      Width = 48
+      Height = 13
+      Caption = 'Valor Litro'
+    end
     object btnConfirmar: TButton
       Left = 798
       Top = 656
@@ -147,7 +154,8 @@ object frmAbastecimento: TfrmAbastecimento
       Width = 121
       Height = 21
       Alignment = taRightJustify
-      TabOrder = 6
+      ReadOnly = True
+      TabOrder = 7
       OnExit = edtValorExit
     end
     object edtVlImposto: TEdit
@@ -156,10 +164,11 @@ object frmAbastecimento: TfrmAbastecimento
       Width = 121
       Height = 21
       Alignment = taRightJustify
-      TabOrder = 7
+      ReadOnly = True
+      TabOrder = 9
     end
     object edtImposto: TEdit
-      Left = 208
+      Left = 206
       Top = 224
       Width = 39
       Height = 21
@@ -167,6 +176,16 @@ object frmAbastecimento: TfrmAbastecimento
       ReadOnly = True
       TabOrder = 8
       Text = '13'
+    end
+    object edtValorLitro: TEdit
+      Left = 208
+      Top = 144
+      Width = 90
+      Height = 21
+      Alignment = taRightJustify
+      TabOrder = 6
+      Text = '0,00'
+      OnExit = edtValorLitroExit
     end
   end
 end

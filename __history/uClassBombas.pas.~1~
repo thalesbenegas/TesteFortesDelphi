@@ -1,0 +1,114 @@
+unit uClassBombas;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, uDM;
+
+type
+  clsBombas = class
+
+  private
+    fId: integer;
+    fDescricao: string;
+    fdmConect: TDM;
+    fidTanque: integer;
+
+  public
+    constructor Create;
+    destructor Destroy;
+
+    property id : integer read fId write fId;
+    property descricao : string read fDescricao write fDescricao;
+    property idTanque : integer read fidTanque write fidTanque;
+    property OdmConect : TDM read fdmConect write fdmConect;
+
+    procedure Alterar(Obj :clsBombas);
+    procedure Incluir(Obj :clsBombas);
+    procedure Excluir(Obj :clsBombas);
+    procedure CarregarDados;
+
+  end;
+
+implementation
+
+{ clsTanques }
+
+procedure clsBombas.Alterar(Obj :clsBombas);
+begin
+  try
+    fdmConect.fdqQryBomba.Sql.Clear;
+
+    fdmConect.fdqQryBomba.Sql.Add(' update bomba set ');
+    fdmConect.fdqQryBomba.Sql.Add(' descricao = :descricao, ');
+    fdmConect.fdqQryBomba.Sql.Add(' idtanque = :idtanque ');
+    fdmConect.fdqQryBomba.Sql.Add(' where idBomba = :idBomba ');
+
+    fdmConect.fdqQryBomba.ParamByName('idBomba').Value := Obj.fId;
+    fdmConect.fdqQryBomba.ParamByName('idTanque').Value  := Obj.idTanque;
+    fdmConect.fdqQryBomba.ParamByName('descricao').Value := Obj.descricao;
+    fdmConect.fdqQryBomba.ExecSQL;
+  finally
+     fdmConect.fdqQryBomba.Close;
+  end;
+end;
+
+procedure clsBombas.CarregarDados;
+begin
+
+  fdmConect.fdqQryBomba.Close;
+  fdmConect.fdqQryBomba.Sql.Clear;
+
+  fdmConect.fdqQryBomba.Sql.Add(' select * from bomba ');
+  fdmConect.fdqQryBomba.Sql.Add(' order by idBomba ');
+  fdmConect.fdqQryBomba.Open;
+
+end;
+
+constructor clsBombas.Create;
+begin
+  fdmConect := DM;
+end;
+
+destructor clsBombas.Destroy;
+begin
+  fdmConect.fdqQryBomba.Close;
+  FreeAndNil(fdmConect);
+end;
+
+procedure clsBombas.Excluir(Obj: clsBombas);
+begin
+  try
+    fdmConect.fdqQryBomba.Sql.Clear;
+
+    fdmConect.fdqQryBomba.Sql.Add(' delete from bomba ');
+    fdmConect.fdqQryBomba.Sql.Add(' where idBomba = :idBomba ');
+
+    fdmConect.fdqQryBomba.ParamByName('idBomba').Value  := Obj.id;
+    fdmConect.fdqQryBomba.ExecSQL;
+  finally
+     fdmConect.fdqQryBomba.Close;
+  end;
+end;
+
+procedure clsBombas.Incluir(Obj: clsBombas);
+begin
+  try
+    fdmConect.fdqQryBomba.Sql.Clear;
+
+    fdmConect.fdqQryBomba.Sql.Add('Insert into bomba (descricao, idtanque) ');
+    fdmConect.fdqQryBomba.Sql.Add(' Values (:descricao, :idtanque) ');
+
+    fdmConect.fdqQryBomba.ParamByName('descricao').AsString := Obj.descricao;
+    fdmConect.fdqQryBomba.ParamByName('idtanque').Value := Obj.idTanque;
+    fdmConect.fdqQryBomba.ExecSQL;
+  finally
+    fdmConect.fdqQryBomba.Close;
+  end;
+
+end;
+
+end.
