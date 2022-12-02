@@ -187,4 +187,8 @@ object frmRelatorioAbast: TfrmRelatorioAbast
     Left = 744
     Top = 400
   end
+  object RLExpressionParser1: TRLExpressionParser
+    Left = 400
+    Top = 288
+  end
 end

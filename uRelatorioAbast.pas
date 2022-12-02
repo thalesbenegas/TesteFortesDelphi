@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, RLReport, Data.DB, uDM;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, RLReport, Data.DB, uDM, RLParser;
 
 type
   TfrmRelatorioAbast = class(TForm)
@@ -26,6 +26,7 @@ type
     RLBand4: TRLBand;
     RLDBResult1: TRLDBResult;
     RLLabel5: TRLLabel;
+    RLExpressionParser1: TRLExpressionParser;
   private
     { Private declarations }
   public

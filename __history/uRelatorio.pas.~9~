@@ -35,20 +35,6 @@ implementation
 procedure TfrmRalatorio.Button1Click(Sender: TObject);
 begin
   DM.fdqQryRelAbast.Close;
-  DM.fdqQryRelAbast.SQL.Clear;
-  DM.fdqQryRelAbast.SQL.Add(' select cast(a.dataabastecimento as date) as Data,  ');
-  DM.fdqQryRelAbast.SQL.Add('     c.descricao as tanque_usado,  ');
-  DM.fdqQryRelAbast.SQL.Add('     b.descricao as bomba_usada,   ');
-  DM.fdqQryRelAbast.SQL.Add('     SUM(a.vlimposto) as Valor     ');
-  DM.fdqQryRelAbast.SQL.Add('   from abastecimento a            ');
-  DM.fdqQryRelAbast.SQL.Add(' inner join Bomba b on b.idbomba = a.idbomba  ');
-  DM.fdqQryRelAbast.SQL.Add(' inner join tanque c on c.idtanque = b.idtanque ');
-  DM.fdqQryRelAbast.SQL.Add(' where cast(a.dataabastecimento as date) between :dataini and :datafim  ');
-  DM.fdqQryRelAbast.SQL.Add(' group by cast(a.dataabastecimento as date), c.descricao, b.descricao');
-
-  DM.fdqQryRelAbast.ParamByName('dataini').Value  := FormatDateTime('dd.MM.yyyy', StrToDate( mkeDataIni.Text));
-  DM.fdqQryRelAbast.ParamByName('datafim').Value  := FormatDateTime('dd.MM.yyyy', StrToDate( mkeDataFim.Text));
-
   DM.fdqQryRelAbast.Open;
 
   frmRelatorioAbast.rlRelAbastecimento.Preview();

@@ -126,7 +126,7 @@ object frmRelatorioAbast: TfrmRelatorioAbast
       object RLDBText2: TRLDBText
         Left = 136
         Top = 0
-        Width = 110
+        Width = 137
         Height = 16
         Align = faTopOnly
         AutoSize = False
@@ -156,10 +156,39 @@ object frmRelatorioAbast: TfrmRelatorioAbast
         Text = ''
       end
     end
+    object RLBand4: TRLBand
+      Left = 38
+      Top = 107
+      Width = 718
+      Height = 22
+      BandType = btFooter
+      object RLDBResult1: TRLDBResult
+        Left = 631
+        Top = 0
+        Width = 87
+        Height = 16
+        Align = faRightTop
+        DataField = 'VALOR'
+        DataSource = dsRelAbast
+        Info = riSum
+        Text = ''
+      end
+      object RLLabel5: TRLLabel
+        Left = 528
+        Top = 3
+        Width = 70
+        Height = 16
+        Caption = 'Valor Total:'
+      end
+    end
   end
   object dsRelAbast: TDataSource
     DataSet = DM.fdqQryRelAbast
     Left = 744
     Top = 400
+  end
+  object RLExpressionParser1: TRLExpressionParser
+    Left = 400
+    Top = 288
   end
 end

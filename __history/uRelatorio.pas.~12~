@@ -46,8 +46,8 @@ begin
   DM.fdqQryRelAbast.SQL.Add(' where cast(a.dataabastecimento as date) between :dataini and :datafim  ');
   DM.fdqQryRelAbast.SQL.Add(' group by cast(a.dataabastecimento as date), c.descricao, b.descricao');
 
-  DM.fdqQryRelAbast.ParamByName('dataini').Value  := FormatDateTime('dd.MM.yyyy', StrToDate( mkeDataIni.Text));
-  DM.fdqQryRelAbast.ParamByName('datafim').Value  := FormatDateTime('dd.MM.yyyy', StrToDate( mkeDataFim.Text));
+  DM.fdqQryRelAbast.ParamByName('dataini').Value  := FormatDateTime('dd/MM/yyyy', StrToDate( mkeDataIni.Text));
+  DM.fdqQryRelAbast.ParamByName('datafim').Value  := FormatDateTime('dd/MM/yyyy', StrToDate( mkeDataFim.Text));
 
   DM.fdqQryRelAbast.Open;
 
