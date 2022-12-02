@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/11/24 19:32:44.000.421,=C:\Users\thale\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/28 18:10:43.000.798,=C:\Users\thale\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/28 18:32:53.921,=C:\Users\thale\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/01 06:27:03.561,D:\TesteFortes\TesteFortesDelphi\UPrincipal.dfm=C:\Users\thale\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/12/01 06:27:03.561,D:\TesteFortes\TesteFortesDelphi\UPrincipal.pas=C:\Users\thale\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/01 06:27:14.279,D:\TesteFortes\TesteFortesDelphi\PostoABC.dproj=C:\Users\thale\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/12/01 18:37:06.681,=D:\TesteFortes\TesteFortesDelphi\uBombas.pas</Transaction>
+    <Transaction>2022/12/01 18:37:06.750,=D:\TesteFortes\TesteFortesDelphi\uBombasMnt.pas</Transaction>
+    <Transaction>2022/12/01 18:37:06.786,=D:\TesteFortes\TesteFortesDelphi\uClassBombas.pas</Transaction>
+    <Transaction>2022/12/01 18:37:06.812,=D:\TesteFortes\TesteFortesDelphi\uClassTanques.pas</Transaction>
+    <Transaction>2022/12/01 18:37:06.883,=D:\TesteFortes\TesteFortesDelphi\uTanques.pas</Transaction>
+    <Transaction>2022/12/01 18:37:06.958,=D:\TesteFortes\TesteFortesDelphi\uTanquesMnt.pas</Transaction>
+    <Transaction>2022/12/01 18:37:31.678,=D:\TesteFortes\TesteFortesDelphi\Unit1.pas</Transaction>
+    <Transaction>2022/12/01 18:37:49.359,D:\TesteFortes\TesteFortesDelphi\uDM.dfm=D:\TesteFortes\TesteFortesDelphi\Unit1.dfm</Transaction>
+    <Transaction>2022/12/01 18:37:49.359,D:\TesteFortes\TesteFortesDelphi\uDM.pas=D:\TesteFortes\TesteFortesDelphi\Unit1.pas</Transaction>
+    <Transaction>2022/12/01 19:02:34.928,=D:\TesteFortes\TesteFortesDelphi\Unit1.pas</Transaction>
+    <Transaction>2022/12/01 19:03:03.395,D:\TesteFortes\TesteFortesDelphi\uClasseBombas.pas=D:\TesteFortes\TesteFortesDelphi\Unit1.pas</Transaction>
+    <Transaction>2022/12/01 19:11:18.437,D:\TesteFortes\TesteFortesDelphi\uClasseBombas.pas=</Transaction>
+    <Transaction>2022/12/01 21:14:10.496,=D:\TesteFortes\TesteFortesDelphi\Unit2.pas</Transaction>
+    <Transaction>2022/12/01 21:20:34.370,D:\TesteFortes\TesteFortesDelphi\uAbastecimento.dfm=D:\TesteFortes\TesteFortesDelphi\Unit2.dfm</Transaction>
+    <Transaction>2022/12/01 21:20:34.370,D:\TesteFortes\TesteFortesDelphi\uAbastecimento.pas=D:\TesteFortes\TesteFortesDelphi\Unit2.pas</Transaction>
+    <Transaction>2022/12/01 21:20:46.615,=D:\TesteFortes\TesteFortesDelphi\Unit1.pas</Transaction>
+    <Transaction>2022/12/01 21:21:37.091,D:\TesteFortes\TesteFortesDelphi\uClassAbastecimento.pas=D:\TesteFortes\TesteFortesDelphi\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

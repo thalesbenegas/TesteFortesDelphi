@@ -1,0 +1,169 @@
+object frmAbastecimento: TfrmAbastecimento
+  Left = 0
+  Top = 0
+  Caption = 'Abastecimento'
+  ClientHeight = 702
+  ClientWidth = 1059
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 1059
+    Height = 702
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 520
+    ExplicitTop = 336
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object Label1: TLabel
+      Left = 32
+      Top = 29
+      Width = 58
+      Height = 13
+      Caption = 'Cod. Bomba'
+    end
+    object Label2: TLabel
+      Left = 104
+      Top = 29
+      Width = 32
+      Height = 13
+      Caption = 'Bomba'
+    end
+    object Label3: TLabel
+      Left = 32
+      Top = 125
+      Width = 26
+      Height = 13
+      Caption = 'Litros'
+    end
+    object Label4: TLabel
+      Left = 32
+      Top = 205
+      Width = 24
+      Height = 13
+      Caption = 'Valor'
+    end
+    object Label5: TLabel
+      Left = 32
+      Top = 281
+      Width = 90
+      Height = 13
+      Caption = 'Valor Com Imposto'
+    end
+    object Label6: TLabel
+      Left = 208
+      Top = 205
+      Width = 39
+      Height = 13
+      Caption = 'Imposto'
+    end
+    object Label7: TLabel
+      Left = 251
+      Top = 227
+      Width = 11
+      Height = 13
+      Caption = '%'
+    end
+    object lblData: TLabel
+      Left = 40
+      Top = 416
+      Width = 137
+      Height = 33
+      Caption = 'lblData'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -27
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object btnConfirmar: TButton
+      Left = 798
+      Top = 656
+      Width = 75
+      Height = 25
+      Caption = 'Confirmar'
+      TabOrder = 0
+      OnClick = btnConfirmarClick
+    end
+    object Button2: TButton
+      Left = 960
+      Top = 656
+      Width = 75
+      Height = 25
+      Caption = 'Sair'
+      TabOrder = 1
+      OnClick = Button2Click
+    end
+    object Button1: TButton
+      Left = 879
+      Top = 656
+      Width = 75
+      Height = 25
+      Caption = 'Limpar'
+      TabOrder = 2
+      OnClick = Button1Click
+    end
+    object edtBomba: TEdit
+      Left = 32
+      Top = 48
+      Width = 58
+      Height = 21
+      NumbersOnly = True
+      TabOrder = 3
+    end
+    object edtDescBomba: TEdit
+      Left = 104
+      Top = 48
+      Width = 209
+      Height = 21
+      TabOrder = 4
+    end
+    object edtLitros: TEdit
+      Left = 32
+      Top = 144
+      Width = 121
+      Height = 21
+      Alignment = taRightJustify
+      TabOrder = 5
+      Text = '0,00'
+    end
+    object edtValor: TEdit
+      Left = 32
+      Top = 224
+      Width = 121
+      Height = 21
+      Alignment = taRightJustify
+      TabOrder = 6
+    end
+    object edtVlImposto: TEdit
+      Left = 32
+      Top = 300
+      Width = 121
+      Height = 21
+      Alignment = taRightJustify
+      TabOrder = 7
+    end
+    object Edit2: TEdit
+      Left = 208
+      Top = 224
+      Width = 39
+      Height = 21
+      Alignment = taRightJustify
+      ReadOnly = True
+      TabOrder = 8
+      Text = '13'
+    end
+  end
+end
